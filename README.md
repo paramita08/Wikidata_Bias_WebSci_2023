@@ -7,15 +7,15 @@ We used [kgtk](https://kgtk.readthedocs.io/en/latest/) to prepare the dataset. A
 wiki_dump = dataset_path
 kgtk import-wikidata -i $wiki_dumo --node nodefile.tsv --edge edgefile.tsv --qual qualfile.tsv
 
-# <b>Node file containes the labels of all entities and relations in the wikidata</b>
-# <b>Edge file contains all the triples in the wikidata along with their descriptions. We remove all the columns and store only the head,relation and tail entity. This file is saved as Final_triples_QP.tsv</b>
+<b># Node file containes the labels of all entities and relations in the wikidata</b>
+<b># Edge file contains all the triples in the wikidata along with their descriptions. We remove all the columns and store only the head,relation and tail entity. This file is saved as Final_triples_QP.tsv</b>
 </pre>
 
 ### Collection of Demography datasets
 
 First we extract all the humans from the entire dataset
 <pre>
-# <b>P31 - instance of and Q5 - human</b>
+<b># P31 - instance of and Q5 - human</b>
 
 kgtk filter -i Final_triples_QP.tsv -p ";P31;Q5" > humans.tsv
 </pre>
@@ -65,7 +65,7 @@ all_human_dataset, human2id, human_embeddings, gmf2id, gmf_embeddings = preproce
 f=open(human2id_path,"w")
 json.dump(human2id,f)
 
-<b>#  Updating the embeddings using gradient descent </b>
+<b># Updating the embeddings using gradient descent </b>
 
 model = train(seed, human2id, gmf2id, human_embeddings, gmf_embeddings, train_df, batch_size, use_gpu, learning_rate, checkpoint_path, dimension, epochs, best_loss_input, ifSave, relative_gender)
 
