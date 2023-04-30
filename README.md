@@ -18,7 +18,7 @@ First we extract all the humans from the entire dataset
 # P31 - instance of and Q5 - human
 kgtk filter -i Final_triples_QP.tsv -p ";P31;Q5" > humans.tsv
 ```
-Following are the commands to extract each demographic dataset. Let us say Qnode_demo is the Qnode entity of a particular demography
+Following are the commands to extract each demographic dataset. Let us say Qnode_demo is the Qnode entity of a particular demography. The entities and relations whose labels are not present in nodefile.tsv are found using [qwikidata](https://pypi.org/project/qwikidata/) python package. 
 ```
 kgtk filter -i Final_triples_QP.tsv -p ";P21;Qnode_demo" > humans.tsv
 kgtk join --right-file citizens.tsv --left-file ../humans.tsv > humans.tsv
@@ -26,7 +26,7 @@ kgtk join --right-file humans.tsv --left-file Final_triples_QP.tsv > All_triples
 kgtk filter -i All_triples.tsv --regex --match-type fullmatch -p ';;Q[0-9].*' > rhs.tsv
 # The All_triples.tsv file contain all the triples in format <Qnode,Pnode,Qnode>
 python find_labels.py 
-# This command helps to label the entities and relations present in the demography dataset. The entities and relations whose labels are not present in nodefile.tsv are found using [qwikidata](https://pypi.org/project/qwikidata/) python package. 
+# This command helps to label the entities and relations present in the demography dataset.
 python write_labels.py
 # This command prepares the final demographic dataset. 
 ```
