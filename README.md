@@ -37,6 +37,8 @@ python write_labels.py
 <b># This command prepares the final demographic dataset.</b>
 </pre>
 
+### Formation of giant knowledge graph
+To form a giant knowledge graph which represents all these demographics we followed the same method as mentioned in paper. The final dataset can be downloaded [here](https://zenodo.org/record/7881057#.ZE6l93ZBxPY).
 ## Generation of the knowledge graph embedding
 ------------------
 To generate the embeddings we used [Ampligraph](https://github.com/Accenture/AmpliGraph) library. The files for this are in GENERATE_EMBEDS folder. Following are the commands to train the model and evaluate it's performance.
@@ -72,4 +74,16 @@ model = train(seed, human2id, gmf2id, human_embeddings, gmf_embeddings, train_df
 <b># Finding the bias scores and sorting in decreasing order to rank the professions. </b>
 
 find_bias(human2id_path, ckpt_path, professions_path, embeddings_path, dimension, path_to_save_bias_scores)
+</pre>
+## Citation
+------------------
+<pre>
+@misc{das2023diversity,
+      title={Diversity matters: Robustness of bias measurements in Wikidata}, 
+      author={Paramita Das and Sai Keerthana Karnam and Anirban Panda and Bhanu Prakash Reddy Guda and Soumya Sarkar and Animesh Mukherjee},
+      year={2023},
+      eprint={2302.14027},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
 </pre>
