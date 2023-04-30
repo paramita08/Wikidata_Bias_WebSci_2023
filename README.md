@@ -26,15 +26,15 @@ kgtk join --right-file citizens.tsv --left-file ../humans.tsv > humans.tsv
 kgtk join --right-file humans.tsv --left-file Final_triples_QP.tsv > All_triples.tsv
 kgtk filter -i All_triples.tsv --regex --match-type fullmatch -p ';;Q[0-9].*' > rhs.tsv
 
-<b> # The All_triples.tsv file contain all the triples in format <Qnode,Pnode,Qnode></b>
+<b># The All_triples.tsv file contain all the triples in format <Qnode,Pnode,Qnode></b>
 
 python find_labels.py 
 
-<b> # This command helps to label the entities and relations present in the demography dataset.</b>
+<b># This command helps to label the entities and relations present in the demography dataset.</b>
 
 python write_labels.py
 
-<b> # This command prepares the final demographic dataset.</b>
+<b># This command prepares the final demographic dataset.</b>
 </pre>
 
 ### Generation of the knowledge graph embedding
@@ -59,17 +59,17 @@ from grad_descent_for_bias import train
 from find_bias import find_bias
 from get_biases_for_all_professions import get_biases
 
-<b> # Preprocessing to get the humans,occupations and gender entities embeddings </b>
+<b># Preprocessing to get the humans,occupations and gender entities embeddings </b>
 
 all_human_dataset, human2id, human_embeddings, gmf2id, gmf_embeddings = preprocess(demographic_dataset_path, model_path , entire_dataset_path)
 f=open(human2id_path,"w")
 json.dump(human2id,f)
 
-<b> #  Updating the embeddings using gradient descent </b>
+<b>#  Updating the embeddings using gradient descent </b>
 
 model = train(seed, human2id, gmf2id, human_embeddings, gmf_embeddings, train_df, batch_size, use_gpu, learning_rate, checkpoint_path, dimension, epochs, best_loss_input, ifSave, relative_gender)
 
-<b> # Finding the bias scores and sorting in decreasing order to rank the professions. </b>
+<b># Finding the bias scores and sorting in decreasing order to rank the professions. </b>
 
 find_bias(human2id_path, ckpt_path, professions_path, embeddings_path, dimension, path_to_save_bias_scores)
 </pre>
