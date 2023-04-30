@@ -35,7 +35,7 @@ python find_labels.py
 python write_labels.py
 
 <b> # This command prepares the final demographic dataset.</b>
-
+</pre>
 
 ### Generation of the knowledge graph embedding
 ------------------
