@@ -37,7 +37,7 @@ python write_labels.py
 <b># This command prepares the final demographic dataset.</b>
 </pre>
 
-### Generation of the knowledge graph embedding
+## Generation of the knowledge graph embedding
 ------------------
 To generate the embeddings we used [Ampligraph](https://github.com/Accenture/AmpliGraph) library. The files for this are in GENERATE_EMBEDS folder. Following are the commands to train the model and evaluate it's performance.
 
@@ -48,7 +48,7 @@ train_model(model_name,path_to_dataset,num_epochs,saved_model_path)
 eval_model(saved_model_path, path_to_dataset,n)
 </pre>
 
-### Bias measurement in KG embedding
+## Bias measurement in KG embedding
 ------------------
 The entire code for the bias measurement is present in the folder BIAS_METRIC. Following are the commands to run the bias measurement for each of the demography.
 <pre>
