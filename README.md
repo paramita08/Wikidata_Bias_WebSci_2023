@@ -16,6 +16,7 @@ kgtk import-wikidata -i $wiki_dumo --node nodefile.tsv --edge edgefile.tsv --qua
 First we extract all the humans from the entire dataset
 <pre>
 # <b>P31 - instance of and Q5 - human</b>
+
 kgtk filter -i Final_triples_QP.tsv -p ";P31;Q5" > humans.tsv
 </pre>
 Following are the commands to extract each demographic dataset. Let us say Qnode_demo is the Qnode entity of a particular demography. The entities and relations whose labels are not present in nodefile.tsv are found using [qwikidata](https://pypi.org/project/qwikidata/) python package.
@@ -34,7 +35,7 @@ python find_labels.py
 python write_labels.py
 
 <b> # This command prepares the final demographic dataset.</b>
-```
+
 
 ### Generation of the knowledge graph embedding
 ------------------
