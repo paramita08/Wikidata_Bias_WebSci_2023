@@ -5,8 +5,9 @@ The work accepted at ```ACM WebSci 2023``` is contributed by Paramita Das, Sai K
 We used [kgtk](https://kgtk.readthedocs.io/en/latest/) to prepare the dataset. All the required files are added in DATASET folder. 
 ```
 wiki_dump = dataset_path
-kgtk import-wikidata -i $wiki_dumo --node nodefile.tsv --edge edgefile.tsv --qual qualfile.tsv 
-# Node file containes the labels of all entities and relations in the wikidata
+kgtk import-wikidata -i $wiki_dumo --node nodefile.tsv --edge edgefile.tsv --qual qualfile.tsv
+
+# **Node file containes the labels of all entities and relations in the wikidata**
 # Edge file contains all the triples in the wikidata along with their descriptions. We remove all the columns and store only the head,relation and tail entity. This file is saved as Final_triples_QP.tsv
 
 ```
