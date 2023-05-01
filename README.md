@@ -2,7 +2,7 @@
 The work accepted at ```ACM WebSci 2023``` is contributed by Paramita Das, Sai Keerthana Karnam, Anirban Panda, Bhanu Prakash Reddy Guda, Soumya Sarkar and Animesh Mukherjee. 
 
 # Find our paper at 
-[arxiv] (https://arxiv.org/abs/2302.14027)
+[here](https://arxiv.org/abs/2302.14027)
 
 ## Dataset Preperation
 ------------------
