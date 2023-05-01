@@ -1,5 +1,8 @@
 # Diversity matters: Robustness of bias measurements in Wikidata
 The work accepted at ```ACM WebSci 2023``` is contributed by Paramita Das, Sai Keerthana Karnam, Anirban Panda, Bhanu Prakash Reddy Guda, Soumya Sarkar and Animesh Mukherjee. 
+
+# Find our paper at [arxiv] (https://arxiv.org/abs/2302.14027)
+
 ## Dataset Preperation
 ------------------
 We used [kgtk](https://kgtk.readthedocs.io/en/latest/) to prepare the dataset. All the required files are added in DATASET folder. 
